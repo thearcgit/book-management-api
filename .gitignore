@@ -4,3 +4,6 @@ dist
 .env
 *.tsbuildinfo
 prisma/migrations
+/src/generated/prisma
+
+/generated/prisma

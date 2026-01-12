@@ -1,7 +1,7 @@
 import 'dotenv/config'
-const { PORT, DB_URL } = process.env
+const { PORT, DATABASE_URL } = process.env
 
 export {
     PORT,
-    DB_URL
+    DATABASE_URL
 }

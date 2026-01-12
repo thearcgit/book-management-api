@@ -9,6 +9,10 @@
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "target": "esnext",
+    "baseUrl": ".", 
+    "paths": {
+      "@/*": ["src/*"] 
+    },
     // "types": [],
     // For nodejs:
     "lib": ["esnext"],
@@ -26,6 +30,8 @@
 
     // Recommended Options
     "strict": true,
-    "skipLibCheck": true,
-  }
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "prisma.config.ts"]
 }

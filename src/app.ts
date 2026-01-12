@@ -5,11 +5,15 @@ import { morganHandler } from './utils/logger.js'
 import { errorResponse, successResponse } from './utils/responses.js'
 import { statusCode } from './constants/statusCode.js'
 import corsOptions from './utils/corsOption.js'
-import { centralizeError } from './errors/error.js'
 import { asyncHandler } from './utils/asyncHandler.js'
+import routes from './routes/index.js'
+import { centralizeError } from './middlewares/error.js'
 
 
 const app = express()
+
+// Remove framework exposure
+app.disable('x-powered-by')
 
 // Middlewares
 
@@ -22,6 +26,10 @@ app.use(express.urlencoded({ extended: true }))
 
 // logger middleware
 app.use(morgan(morganHandler))
+
+
+// Routes middleware
+app.use(`/api`,routes)
 
 
 // @desc   Test if Server is running or not
