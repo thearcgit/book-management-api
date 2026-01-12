@@ -6,7 +6,11 @@ interface BookResponse {
   id: string;
   title: string;
   author: string;
+  publishedYear:number;
+  updatedAt?:Date;
+  createdAt?:Date;
 }
+
 
 export {
     AddBookBody,
