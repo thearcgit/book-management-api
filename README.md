@@ -101,59 +101,9 @@ npm run build
 
 ## API 
 
-**Base URL:** http://localhost:9000
+[**Base URL:**](http://localhost:9000)
 
-### Create Book API 
-**POST** `/api/books`
-
-`Request body:`
-```json
-{
-    "title": "Interview preparation",           # Must be unique
-    "author": "Someone",
-    "publishedYear": 2008
-}
-```
-`Response body:`
-
-```json
-{
-    "id": "uuid",                           
-    "title": "Interview preparation",
-    "author": "Someone",
-    "publishedYear": 2008,
-    "createdAt": "2026-01-13T10:00:00.000Z"
-}
-```
-### Get All Book API
-**GET** `/api/books`
-
-### Get Specific Book API
-**GET** `/api/books/:id`
-
-### Delete Book API
-**DELETE** `/api/books/:id`
-
-### Update Book API
-**PUT** ``/api/books/:id``
-
-`Request body:`
-```json 
-{
-    "title": "Interview preparation volume 2",           # Must be unique
-    "author": "Someone",
-    "publishedYear": 2008
-}
-```
-
-**Note:** This API uses PUT, so the full book object must be provided.
-Partial updates are not supported (PATCH is not implemented).
-
-
-### Import CSV Book API
-**POST** `/api/books/import`
-
-**Note:** CSV parsing is implemented manually without using any third-party CSV parsing libraries.
+- [Books API](./docs/api/books.md)
 
 
 ## Postman collection
