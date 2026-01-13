@@ -20,7 +20,7 @@ export const addBook = asyncHandler(async (req: Request, res: Response): Promise
     const validatedData = value as AddBookBody
     const book = await addBookService(validatedData)
 
-    successResponse(res, statusCode.CREATED, `Book detail added successfully!`, book)
+    successResponse(res, statusCode.CREATED, `Book added successfully!`, book)
 
 })
 

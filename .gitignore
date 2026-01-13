@@ -7,3 +7,4 @@ prisma/migrations
 /src/generated/prisma
 
 /generated/prisma
+coverage/
