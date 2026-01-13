@@ -8,8 +8,6 @@ import { AddBookBody, BookResponse } from "@/types/index.types.js"
 
 
 export const addBookService = async (data: AddBookBody): Promise<AddBookBody> => {
-    // console.log('bookkk', prisma.book)
-
     const isBookExist = await prisma.book.findUnique({ where: { title: data.title } })
 
     // Check if this book is already in database

@@ -1,6 +1,5 @@
 import multer from "multer";
 
-console.log('multer')
 export const upload = multer({
   storage: multer.memoryStorage(),
   fileFilter: (_req, file, cb) => {

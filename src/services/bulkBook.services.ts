@@ -57,7 +57,6 @@ export const bulkUploadService = async (buffer: Buffer) => {
         const { error, value } = bookSchema.validate(transformedRow, {
             abortEarly: false
         });
-        console.log('content in service', { error, value, i })
 
         // Push error if joi gives error
         if (error) {
@@ -73,7 +72,6 @@ export const bulkUploadService = async (buffer: Buffer) => {
         const existingBook = await prisma.book.findUnique({
             where: { title: value.title }
         });
-        console.log('existing', existingBook)
         if (existingBook) {
             errors.push({
                 row: i + 1,

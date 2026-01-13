@@ -18,7 +18,6 @@ export const addBook = asyncHandler(async (req: Request, res: Response): Promise
         throw new customError(error.message, statusCode.BAD_REQUEST)
     }
     const validatedData = value as AddBookBody
-    console.log('validatedData', validatedData)
     const book = await addBookService(validatedData)
 
     successResponse(res, statusCode.CREATED, `Book detail added successfully!`, book)
@@ -75,10 +74,9 @@ export const updateBook = asyncHandler(async (req: Request, res: Response): Prom
     const validatedData = value as AddBookBody
 
     const book = await updateBookService(id,validatedData)
-    // console.log('update',validatedData)
 
     if (!book) {
-      errorResponse(res, statusCode.NOT_FOUND, "Book update unsuccessful");
+      errorResponse(res, statusCode.NOT_FOUND, "Book not found!");
       return;
     }
 
@@ -95,16 +93,14 @@ export const deleteBook = asyncHandler(async (req: Request, res: Response): Prom
         errorResponse(res,statusCode.BAD_REQUEST,`Id is mandatory`)
         return
     }
-    console.log('id type',typeof id)
     if(typeof id !== "string" || Array.isArray(id)){
         errorResponse(res,statusCode.BAD_REQUEST,`Invalid id`)
         return
     }
     const book = await deleteBookService(id)
-    console.log('book delete',book)
 
     if (!book) {
-      errorResponse(res, statusCode.NOT_FOUND, "Invalid book ID");
+      errorResponse(res, statusCode.NOT_FOUND, "Book not found");
       return;
     }
 
@@ -127,7 +123,6 @@ export const bulkUpload = asyncHandler(async (req: Request, res: Response): Prom
         successResponse(res, statusCode.OK, `CSV processed, but no valid books were added!`, result)
         return
     }
-    console.log('file buffer', result)
 
 
     successResponse(res, statusCode.CREATED, `CSV processed successfully!`, result)
