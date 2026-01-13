@@ -4,14 +4,17 @@ following clean architecture and best practices.
 
 ## Tech Stack
 
-- Node.js(Module)          # Runtime Environment
+- Node.js                  # Runtime Environment
 - Express.js               # Framework
 - TypeScript               # Language
 - PostgreSQL               # SQL Database
 - Prisma                   # ORM for PostgreSQL
 - Multer                   # File upload library
 - Joi                      # Validation library
-- Vitest                   # Testing
+- Vitest                   # Testing library
+
+
+**Note:** The project uses ES Modules ("type": "module").
 
 
 ## Project Cloning 
@@ -56,6 +59,11 @@ npm start           # Production
 ```bash
 npm run build
 ```
+
+**Tested with:**
+- Node.js 22.x
+- PostgreSQL 17
+
 
 
 ## Project Structure
