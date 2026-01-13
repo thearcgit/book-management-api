@@ -8,6 +8,7 @@ import { errorResponse, successResponse } from "@/utils/responses.js";
 import { bookSchema, updateBookSchema } from "@/validators/bookSchema.js";
 import { bulkUploadService } from "@/services/bulkBook.services.js";
 import { stat } from "node:fs";
+import prisma from "@/config/db.js";
 
 // @desc   Add book details here
 // @route  POST /api/books
