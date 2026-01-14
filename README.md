@@ -4,6 +4,7 @@ following clean architecture and best practices.
 
 ## Tech Stack
 
+```
 - Node.js                  # Runtime Environment
 - Express.js               # Framework
 - TypeScript               # Language
@@ -12,6 +13,7 @@ following clean architecture and best practices.
 - Multer                   # File upload library
 - Joi                      # Validation library
 - Vitest                   # Testing library
+```
 
 
 **Note:** The project uses ES Modules ("type": "module").
