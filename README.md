@@ -21,17 +21,19 @@ following clean architecture and best practices.
 git clone https://github.com/thearcgit/book-management-api.git
 cd book-management-api
 
-## Install dependencies
-```bash
-npm install
-```
-
 ## Environment variables
 Create a `.env` file based on `.env.example`.
 ```env
 PORT=9000
 DATABASE_URL=postgresql://user:password@localhost:5432/books_management
 ```
+
+
+## Install dependencies
+```bash
+npm install
+```
+
 
 
 ## Setup database
